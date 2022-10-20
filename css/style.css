@@ -1,0 +1,353 @@
+/* Google Font - Poppins - */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+:root {
+    --green-color: #2b9348;
+    --green-color-opacity: #2b934826;
+    --orange-color: #ff8600;
+    --title-color: #333;
+    --text-color: #999; 
+    ---white-color: #fff;
+    --main-transition: 0.5s;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+img {
+    width: 100%;
+}
+/* Start Page */
+.page {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    position: relative;
+}
+.page .full {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #0000006b;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: var(--main-transition);
+}
+.page.open .full {
+    pointer-events: auto;
+    opacity: 1;
+}
+/* End Page */
+/* Start Side Bar */
+.side-bar {
+    width: 250px;
+    padding: 10px;
+    position: fixed;
+    height: 100vh;
+    transition: var(--main-transition);
+    background-color: var(---white-color);
+}
+.side-bar .bar {
+    cursor: pointer;
+    position: absolute;
+    top: 22px;
+    right: -50px;
+    font-size: 26px;
+    color: var(--title-color);
+    transform: rotate(360deg);
+    transition: var(--main-transition);
+    display: none;
+}
+.side-bar .bar.noclick {
+    pointer-events: none;
+}
+.side-bar.open {
+    transform: translateX(0);
+}
+.side-bar.open .bar {
+    right: 25px;
+    color: #ff2525;
+    transform: rotate(0deg);
+}
+.side-bar header {
+    width: 100%;
+    padding: 10px 10px;
+    font-size: 22px;
+    color: var(--title-color);
+    font-weight: bold;
+}
+.side-bar .content-side-bar {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.side-bar aside div {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--main-transition);
+    box-shadow: 0 5px 10px #fff;
+}
+.side-bar aside div i {
+    font-size: 18px;
+    margin-right: 10px;
+    color: var(--text-color);
+    transition: var(--main-transition);
+}
+.side-bar aside div span {
+    color: var(--text-color);
+    font-weight: 18px;
+    font-weight: 500;
+    transition: var(--main-transition);
+}
+.side-bar aside div.active{
+    background-color: var(--green-color);
+    box-shadow: 0 5px 10px var(--green-color);
+}
+.side-bar aside div.active i {
+    color: var(---white-color);
+}
+.side-bar aside div.active span {
+    color: var(---white-color);
+}
+.side-bar aside div:hover {
+    background-color: var(--green-color);
+    box-shadow: 0 5px 10px var(--green-color);
+}
+.side-bar aside div:hover i {
+    color: var(---white-color);
+}
+.side-bar aside div:hover span {
+    color: var(---white-color);
+}
+.side-bar .discount {
+    background-color: #333;
+    border-radius: 20px;
+    margin-top: 70px;
+    padding: 10px 10px 20px;
+    position: relative;
+}
+.side-bar .discount .num-of-discount p {
+    font-size: 30px;
+    color: var(--orange-color);
+    font-weight: bold;
+    text-align: center;
+}
+.side-bar .discount .num-of-discount p span {
+    color: var(---white-color);
+    font-size: 18px;
+    font-weight: 500;
+}
+.side-bar .discount > p {
+    text-align: center;
+    font-weight: 300;
+    color: var(---white-color);
+    font-size: 10px;
+}
+.side-bar .discount i {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--orange-color);
+    color: var(---white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+    cursor: pointer;
+}
+@media (max-width: 991px) {
+    .side-bar {
+        transform: translateX(-100%);
+    }
+    .side-bar .bar {
+        display: block;
+    }
+}
+/* End Side Bar */
+/* Start Calendar Asid */
+.calendar-asid {
+    width: 300px;
+    padding: 10px;
+    position: fixed;
+    height: 100vh;
+    transition: var(--main-transition);
+    background-color: var(---white-color);
+    top: 0;
+    right: 0;
+}
+.calendar-asid .bar {
+    cursor: pointer;
+    position: absolute;
+    top: 22px;
+    left: -50px;
+    font-size: 26px;
+    color: var(--title-color);
+    transform: rotate(-360deg);
+    transition: var(--main-transition);
+    display: none;
+}
+.calendar-asid .bar.noclick {
+    pointer-events: none;
+}
+.calendar-asid.open {
+    transform: translateX(0);
+}
+.calendar-asid.open .bar {
+    left: 20px;
+    color: #ff2525;
+    transform: rotate(0deg);
+}
+.calendar-asid .acount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.calendar-asid .username {
+    display: flex;
+    align-items: center;
+}
+.calendar-asid .username img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.calendar-asid .username p {
+    color: var(--title-color);
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+.calendar-asid .username span {
+    font-size: 12px;
+    margin-top: 0;
+    display: block;
+    color: var(--text-color);
+}
+.calendar-asid .change-acount i {
+    font-size: 18px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: var(--main-transition);
+}
+.calendar-asid .change-acount i:hover {
+    color: var(--green-color);
+}
+/* Start Calendar */
+.calendar-box {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+}
+.calendar-box header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+header .current-data {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--title-color);
+}
+header .icons i {
+    height: 28px;
+    width: 28px;
+    margin: 0 1px;
+    color: #878787;
+    text-align: center;
+    line-height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 12px;
+}
+header .icons i:hover {
+    background-color: #f2f2f2;
+}
+header .icons i:last-child {
+    margin-right: -10px;
+}
+.calendar ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.calendar .days {
+    margin-bottom: 20px;
+}
+.calendar .weeks li {
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--title-color);
+}
+.calendar ul li {
+    position: relative;
+    width: calc(100% / 7);
+}
+.calendar .days li {
+    margin-top: 10px;
+    font-size: 12px;
+    cursor: pointer;
+    z-index: 1;
+}
+.calendar .days li.inactive {
+    color: var(--text-color);
+}
+.calendar .days li.active {
+    color: #fff;
+}
+.calendar .days li::before {
+    position: absolute;
+    content: "";
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+    z-index: -1;
+}
+.days li:hover::before {
+    background-color: #f2f2f2;
+}
+.days li:hover::before {
+    background-color: #f2f2f2;
+}
+.days li.active::before {
+    background-color: var(--green-color);
+}
+/* End Calendar */
+@media (max-width: 991px) {
+    .calendar-asid {
+        transform: translateX(100%);
+    }
+    .calendar-asid .bar {
+        display: block;
+    }
+    .calendar-asid .acount {
+        margin-top: 45px;
+    }
+}
+/* End Calendar Asid */
