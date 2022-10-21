@@ -17,7 +17,7 @@ img {
 }
 body {
     --green-color: #2b9348;
-    --green-color-opacity: #2b934826;
+    --green-color-opacity: #2b934869;
     --orange-color: #ff8600;
     --title-color: #333;
     --text-color: #999; 
@@ -29,7 +29,7 @@ body {
 body.dark {
     --title-color: #fff;
     --text-color: #aaa;
-    ---white-color: #000;
+    ---white-color: #2e294e;
 }
 /* Start Toggle Box */
 .toggle-checkbox {
@@ -201,7 +201,7 @@ body.dark {
 .side-bar .discount > p {
     text-align: center;
     font-weight: 300;
-    color: var(---white-color);
+    color: #fff;
     font-size: 10px;
 }
 .side-bar .discount i {
