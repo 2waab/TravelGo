@@ -3,7 +3,10 @@ fullScreen = page.querySelector(".full"),
 sideBar = page.querySelector(".side-bar"),
 barIcon = sideBar.querySelector(".bar"),
 acountAside = document.querySelector(".calendar-asid"),
-userIcon = acountAside.querySelector(".bar");
+userIcon = acountAside.querySelector(".bar"),
+body = document.querySelector("body"),
+changeMood = document.querySelector(".toggle-switch"),
+inputMood = document.querySelector(".change-mood lable input");
 
 barIcon.addEventListener("click", () => {
     page.classList.toggle("open");
@@ -87,4 +90,9 @@ prevNextIcon.forEach(icon => {
         }
         renderCalendar();
     });
+});
+
+// Start Change Them 
+changeMood.addEventListener("click", () => {
+    body.classList.toggle("dark");
 });
