@@ -1,10 +1,10 @@
-/* Google Font - Poppins - */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+/* Google Font - Open Sans - */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 ul {
     list-style: none;
@@ -17,7 +17,7 @@ img {
 }
 body {
     --green-color: #2b9348;
-    --green-color-opacity: #2b934869;
+    --green-color-opacity: #2b934829;
     --orange-color: #ff8600;
     --title-color: #333;
     --text-color: #999; 
@@ -28,7 +28,8 @@ body {
 }
 body.dark {
     --title-color: #fff;
-    --text-color: #aaa;
+    --green-color-opacity: #2b934869;
+    --text-color: #d5d5d5;
     ---white-color: #2e294e;
 }
 /* Start Toggle Box */
@@ -83,7 +84,8 @@ body.dark {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #00000087;
+    background-color: #ffffff10;
+    backdrop-filter: blur(5px);
     top: 0;
     left: 0;
     pointer-events: none;
@@ -104,7 +106,6 @@ body.dark {
     height: 100vh;
     transition: var(--main-transition);
     background-color: var(---white-color);
-    z-index: 100;
 }
 .side-bar .bar {
     cursor: pointer;
@@ -122,6 +123,8 @@ body.dark {
 }
 .side-bar.open {
     transform: translateX(0);
+    z-index: 100;
+    box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
 }
 .side-bar.open .bar {
     right: 25px;
@@ -181,28 +184,45 @@ body.dark {
     color: var(---white-color);
 }
 .side-bar .discount {
-    background-color: #333;
+    background-image: url("../img/schedule-3.png");
     border-radius: 20px;
     margin-top: 30px;
     padding: 10px 10px 20px;
     position: relative;
+    overflow: hidden;
+}
+.side-bar .discount::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #2e294ec2;
+    z-index: 1;
 }
 .side-bar .discount .num-of-discount p {
     font-size: 30px;
     color: var(--orange-color);
     font-weight: bold;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 .side-bar .discount .num-of-discount p span {
     color: #fff;
     font-size: 18px;
     font-weight: 500;
+    position: relative;
+    z-index: 2;
 }
 .side-bar .discount > p {
     text-align: center;
     font-weight: 300;
     color: #fff;
     font-size: 10px;
+    position: relative;
+    z-index: 2;
 }
 .side-bar .discount i {
     position: relative;
@@ -218,6 +238,7 @@ body.dark {
     transform: translateX(-50%);
     margin-top: 10px;
     cursor: pointer;
+    z-index: 2;
 }
 .side-bar .dark-mood {
     margin-top: 30px;
@@ -248,7 +269,6 @@ body.dark {
     background-color: var(---white-color);
     top: 0;
     right: 0;
-    z-index: 100;
 }
 .calendar-asid .bar {
     cursor: pointer;
@@ -266,6 +286,14 @@ body.dark {
 }
 .calendar-asid.open {
     transform: translateX(0);
+    z-index: 100;
+    box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
+}
+.side-bar.open .calendar-asid {
+    z-index: 50;
+}
+.calendar-asid.open .side-bar {
+    z-index: 50;
 }
 .calendar-asid.open .bar {
     left: 20px;
@@ -483,7 +511,7 @@ header .icons i:last-child {
 .content header .title span {
     display: block;
     margin: 0;
-    font-weight: 12px;
+    font-size: 12px;
     color: var(--text-color);
 }
 .content header .search {
@@ -529,6 +557,79 @@ header .icons i:last-child {
     left: 10px;
     z-index: 1;
 }
+.content .select-info {
+    margin-top: 20px;
+    background-color: var(---white-color);
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+.select-info ul {
+    display: flex;
+    align-items: center;
+}
+.select-info ul li {
+    padding: 5px 10px;
+    font-weight: 500;
+    color: var(--title-color);
+    cursor: pointer;
+    transition: var(--main-transition);
+}
+.select-info ul li:first-child {
+    margin-left: -10px;
+}
+.select-info ul li:hover {
+    color: var(--green-color);
+}
+.select-info .progress-of-info {
+    width: 100%;
+    background-color: var(--green-color-opacity);
+    height: 1px;
+    margin: 15px 0;
+    position: relative;
+    border-radius: 999999px;
+}
+.select-info .progress-of-info span {
+    display: block;
+    background-color: var(--green-color);
+    width: 25%;
+    height: 5px;
+    border-radius: 999999px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.select-info .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.select-info .info .box {
+    display: flex;
+}
+.select-info .info .box i {
+    margin-right: 10px;
+    color: var(--text-color);
+    transition: var(--main-transition);
+}
+.select-info .info .box .text-info p {
+    margin: -5px 0 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--title-color);
+    transition: var(--main-transition);
+}
+.select-info .info .box .text-info span {
+    color: var(--text-color);
+    font-size: 12px;
+    margin: 0;
+    display: block;
+}
+.select-info .info .box:hover i,
+.select-info .info .box:hover p {
+    color: var(--green-color);
+}
 @media (max-width: 991px) {
     .page .content {
         width: 100vw;
@@ -547,6 +648,13 @@ header .icons i:last-child {
     }
     .content header .search input {
         width: calc(100% - 50px);
+    }
+    .select-info .info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .select-info .info .box:not(:last-child) {
+        margin-bottom: 10px;
     }
 }
 /* End Content */
